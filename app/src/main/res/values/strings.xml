@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Rewynd</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="notification_title">Rewynd</string>
+    <string name="title_activity_player">PlayerActivity</string>
+    <string name="title_activity_browser">Browser</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Strings related to login -->
+</resources>

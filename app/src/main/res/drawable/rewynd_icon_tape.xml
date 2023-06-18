@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:viewportWidth="500"
+    android:viewportHeight="300"
+    android:width="1771.654dp"
+    android:height="1062.992dp">
+    <path
+        android:pathData="M0 0H500V300H0V0Z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M50 50H150V250H50V50Z"
+        android:fillColor="#550000" />
+    <path
+        android:pathData="M350 50H450V250H350V50Z"
+        android:fillColor="#000080" />
+    <path
+        android:pathData="M210 150A60 60 0 0 1 90 150A60 60 0 0 1 210 150Z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M410 150A60 60 0 0 1 290 150A60 60 0 0 1 410 150Z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M405 50H410V150H405V50Z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M90 50H95V150H90V50Z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M175 150A25 25 0 0 1 125 150A25 25 0 0 1 175 150Z"
+        android:fillColor="#550000" />
+    <path
+        android:pathData="M375 150A25 25 0 0 1 325 150A25 25 0 0 1 375 150Z"
+        android:fillColor="#000080" />
+    <path
+        android:pathData="M150 65H350V235H150V65Z"
+        android:fillColor="#008000" />
+    <path
+        android:pathData="M325 200v0l-75 -50 75 -50z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M250 200v0l-75 -50 75 -50z"
+        android:fillColor="#000000" />
+</vector>

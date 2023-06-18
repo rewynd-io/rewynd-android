@@ -1,0 +1,3 @@
+[submodule "client/rewynd-spec"]
+	path = client/rewynd-spec
+	url = git@github.com:rewynd-io/rewynd-spec.git
