@@ -87,7 +87,7 @@ class BrowserViewModel(
     fun loadLibraries() {
         Log.i("LibraryLoader", "Loading Libs")
         this.viewModelScope.launch(Dispatchers.IO) {
-            libraries.postValue(requireNotNull(client.listLibraries().body()))
+            libraries.postValue(requireNotNull(client.listLibraries().body().sortedBy { it.name }))
             Log.i("LibraryLoader", "Loaded ${libraries.value}")
 
         }
@@ -113,21 +113,21 @@ class BrowserViewModel(
     val shows = MutableLiveData<List<ShowInfo>>(emptyList<ShowInfo>())
     fun loadShows(libraryName: String) {
         this.viewModelScope.launch(Dispatchers.IO) {
-            shows.postValue(requireNotNull(client.listShows(libraryName).body()))
+            shows.postValue(requireNotNull(client.listShows(libraryName).body().sortedBy { it.title }))
         }
     }
 
     val seasons = MutableLiveData<List<SeasonInfo>>(emptyList<SeasonInfo>())
     fun loadSeasons(showId: String) {
         this.viewModelScope.launch(Dispatchers.IO) {
-            seasons.postValue(requireNotNull(client.listSeasons(showId).body()))
+            seasons.postValue(requireNotNull(client.listSeasons(showId).body().sortedBy { it.seasonNumber }))
         }
     }
 
     val episodes = MutableLiveData<List<EpisodeInfo>>(emptyList<EpisodeInfo>())
     fun loadEpisodes(seasonId: String) {
         this.viewModelScope.launch(Dispatchers.IO) {
-            episodes.postValue(requireNotNull(client.listEpisodes(seasonId).body()))
+            episodes.postValue(requireNotNull(client.listEpisodes(seasonId).body().sortedBy { it.episode }))
         }
     }
 
