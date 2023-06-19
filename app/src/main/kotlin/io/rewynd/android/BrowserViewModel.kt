@@ -99,13 +99,13 @@ class BrowserViewModel(
     fun loadLatestEpisodes() {
         Log.i("LibraryLoader", "Loading Libs")
         this.viewModelScope.launch(Dispatchers.IO) {
-            client.listLatestUserProgress().body().asFlow().flatMapMerge {
+            client.listLatestUserProgress().body().sortedBy { it.timestamp }.reversed().asFlow().flatMapMerge {
                 kotlin.runCatching { flowOf(it to client.getEpisode(it.id).body()) }.getOrNull()
                     ?: emptyFlow()
             }.runningFold(emptyList<Pair<Progress, EpisodeInfo>>()) { accumulator, value ->
                 accumulator + listOf(value)
             }.collect { pair ->
-                latestEpisodes.postValue(pair.sortedBy { it.first.timestamp }.reversed().map { it.second })
+                latestEpisodes.postValue(pair.map { it.second })
             }
         }
     }
